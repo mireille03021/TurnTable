@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <title>輪盤</title>
+</head>
+
+<body>
+    <div class="container text-center my-5">
+        <h1>小瑪莉</h1>
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="input-group col-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">總金額</span>
+                    </div>
+                    <input id="principal" type="text" class="form-control" aria-label="Username"
+                        aria-describedby="basic-addon1" value="1000" readonly>
+                </div>
+                <div class="input-group col-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">總獲利</span>
+                    </div>
+                    <input id="sum" type="text" class="form-control" aria-label="Username"
+                        aria-describedby="basic-addon1" value="0" readonly>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <div id="n0" aria-valuenow="0">年</div>
+                    </td>
+                    <td>
+                        <div id="n1" aria-valuenow="2">意</div>
+                    </td>
+                    <td>
+                        <div id="n2" aria-valuenow="3">味</div>
+                    </td>
+                    <td>
+                        <div id="n3" aria-valuenow="5">無</div>
+                    </td>
+                    <td>
+                        <div id="n4" aria-valuenow="7">的</div>
+                    </td>
+                    <td>
+                        <div id="n5" aria-valuenow="8">可</div>
+                    </td>
+                    <td>
+                        <div id="n6" aria-valuenow="9">能</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="n23" aria-valuenow="1">輕</div>
+                    </td>
+                    <td colspan="5" rowspan="5">
+                        <ul>
+                            <li>年 : 10</li>
+                            <li>輕 : 20</li>
+                            <li>意 : 30</li>
+                            <li>味 : 40</li>
+                            <li>著 : 50</li>
+                            <li>無 : 60</li>
+                            <li>限 : 70</li>
+                            <li>的 : 80</li>
+                            <li>可 : 90</li>
+                            <li>能 : 100</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div id="n7" aria-valuenow="4">著</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="n22" aria-valuenow="6">限</div>
+                    </td>
+                    <td>
+                        <div id="n8" aria-valuenow="1">輕</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="n21" aria-valuenow="5">無</div>
+                    </td>
+                    <td>
+                        <div id="n9" aria-valuenow="8">可</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="n20" aria-valuenow="2">意</div>
+                    </td>
+                    <td>
+                        <div id="n10" aria-valuenow="9">能</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="n19" aria-valuenow="3">味</div>
+                    </td>
+                    <td>
+                        <div id="n11" aria-valuenow="7">的</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="n18" aria-valuenow="1">輕</div>
+                    </td>
+                    <td>
+                        <div id="n17" aria-valuenow="0">年</div>
+                    </td>
+                    <td>
+                        <div id="n16" aria-valuenow="8">可</div>
+                    </td>
+                    <td>
+                        <div id="n15" aria-valuenow="4">著</div>
+                    </td>
+                    <td>
+                        <div id="n14" aria-valuenow="6">限</div>
+                    </td>
+                    <td>
+                        <div id="n13" aria-valuenow="3">味</div>
+                    </td>
+                    <td>
+                        <div id="n12" aria-valuenow="1">年</div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>種類</th>
+                    <td> <span id="item0">年</span> </td>
+                    <td> <span id="item1">輕</span> </td>
+                    <td><span id="item2">意</span></td>
+                    <td><span id="item3">味</span></td>
+                    <td><span id="item4">著</span></td>
+                    <td><span id="item5">無</span></td>
+                    <td><span id="item6">限</span></td>
+                    <td><span id="item7">的</span></td>
+                    <td><span id="item8">可</span></td>
+                    <td><span id="item9">能</span></td>
+                </tr>
+                <tr>
+                    <th>數量</th>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                    <td><span class="inputGroup">0</span></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="0"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="1"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="2"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="3"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="4"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="5"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="6"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="7"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="8"></button></td>
+                    <td><button type="button" class="btn btn-danger buttonbGroup" value="9"></button></td>
+                </tr>
+            </table>
+        </div>
+        <button type="button" class="btn btn-dark" id="start">開始</button>
+        <button type="button" class="btn btn-dark" id="clear">清空下注</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            var principal;
+            var sum;
+            var nowPosition;
+            var lastPosition;
+            var step;
+            var turnTable = new Array(23);
+            var priceTableCapacity = 10
+            var priceTable = new Array(priceTableCapacity);
+
+            function init() {  //給予初始型別和設定值
+                principal = principal = $("#principal").val();
+                sum = parseInt($("#sum").val());
+                nowPosition = 0;
+                lastPosition = 23;
+
+                for (var i = 0; i < turnTable.length; i++) {
+                    turnTable[i] = $("#n" + i).attr('aria-valuenow');
+                }
+                for (var i = 0; i < priceTableCapacity; i++) {
+                    priceTable[i] = (i + 1) * 10;
+                }
+            }
+
+            $("#start").on('click', start);
+
+            function start() {  //開始
+                $('.buttonbGroup').off('click');
+                $('#clear').off('click');
+                var pickNumber = pickRandomNumber();
+                var step = setStep(pickNumber);
+                setTimeout(function () {
+                    getMoney(pickNumber);
+                    $('.buttonbGroup').on('click', buttonClickEvent);
+                    $('#clear').on('click', clear);
+                }, (step + 5) * 20);
+                calcMoney();
+                run(step, pickNumber);
+            }
+
+            function pickRandomNumber() {  //選擇亂數號碼0~23
+                var pickNumber = Math.floor(Math.random() * 24);  //選擇到的數字，又為turnTable的index
+                return pickNumber;
+            }
+
+            function setStep(pickNumber) {  //設定步數
+                var step = pickNumber + (Math.floor(Math.random() * 3) + 4) * 24 - nowPosition;
+                //跑的步數，至少跑4~6圈，扣除nowPosition只是為了從目前位置開始跑，而非0
+                return step;
+            }
+
+            function run(step) { //執行
+                $("#n" + lastPosition).removeClass('active').addClass('image-block');
+                $("#n" + nowPosition).removeClass('image-block').addClass('active');
+                lastPosition = nowPosition;
+                nowPosition++;
+                if (nowPosition > 23) {
+                    nowPosition = 0;
+                }
+                if (step > 0) {
+                    setTimeout(function () {
+                        run(step);
+                    }, 20);
+                    step--;
+                }
+            }
+
+            function calcMoney() {
+                var $principal = $('#principal');
+                var principal = $principal.val();
+                var $sum = $('#sum');
+                var sum = $sum.val();
+                var bet = 0;
+
+                for (var i = 0; i < priceTableCapacity; i++) {
+                    var quantity = $(".inputGroup").eq(i).html();
+                    bet += quantity * 2;
+                }
+                $principal.val(principal - bet);
+            }
+
+            function getMoney(pickNumber) {
+                var $inputGroup = $(".inputGroup");
+                var index = turnTable[pickNumber];
+                var winMoney = priceTable[index] * parseInt($inputGroup.eq(index).html());
+                sum += winMoney;
+                $('#sum').val(sum);
+            }
+
+            $('.buttonbGroup').on('click', buttonClickEvent);
+
+            function buttonClickEvent() {
+                var $this = $(this);
+                var index = $this.val();
+                var quantity = parseInt($(".inputGroup").eq(index).html()) + 1;
+                $(".inputGroup").eq(index).html(quantity);
+            }
+
+            $('#clear').on('click', clear);
+            function clear() {
+                var $inputGroup = $(".inputGroup");
+                for (var i = 0; i < $inputGroup.length; i++) {
+                    $inputGroup[i].innerHTML = "0";
+                }
+            }
+
+            init();
+        });
+    </script>
+</body>
+
+</html>
