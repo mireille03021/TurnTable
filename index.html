@@ -21,7 +21,7 @@
                         <span class="input-group-text">總金額</span>
                     </div>
                     <input id="principal" type="text" class="form-control" aria-label="Username"
-                        aria-describedby="basic-addon1" value="1000" readonly>
+                        aria-describedby="basic-addon1" value="100" readonly>
                 </div>
                 <div class="input-group col-3">
                     <div class="input-group-prepend">
@@ -177,6 +177,7 @@
         </div>
         <button type="button" class="btn btn-dark" id="start">開始</button>
         <button type="button" class="btn btn-dark" id="clear">清空下注</button>
+        <button type="button" class="btn btn-dark" id="change">獲利->金額</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -190,17 +191,15 @@
     <script src="jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            var principal;
-            var sum;
+            var sum;  //獲利
             var nowPosition;
             var lastPosition;
             var step;
-            var turnTable = new Array(23);
+            var turnTable = new Array(24);
             var priceTableCapacity = 10
             var priceTable = new Array(priceTableCapacity);
 
             function init() {  //給予初始型別和設定值
-                principal = principal = $("#principal").val();
                 sum = parseInt($("#sum").val());
                 nowPosition = 0;
                 lastPosition = 23;
@@ -208,6 +207,7 @@
                 for (var i = 0; i < turnTable.length; i++) {
                     turnTable[i] = $("#n" + i).attr('aria-valuenow');
                 }
+                console.log(turnTable[23]);
                 for (var i = 0; i < priceTableCapacity; i++) {
                     priceTable[i] = (i + 1) * 10;
                 }
@@ -216,6 +216,7 @@
             $("#start").on('click', start);
 
             function start() {  //開始
+                $('#change').off('click');
                 $('.buttonbGroup').off('click');
                 $('#clear').off('click');
                 var pickNumber = pickRandomNumber();
@@ -224,9 +225,12 @@
                     getMoney(pickNumber);
                     $('.buttonbGroup').on('click', buttonClickEvent);
                     $('#clear').on('click', clear);
+                    $('#change').on('click',changeMoney);
                 }, (step + 5) * 20);
-                calcMoney();
-                run(step, pickNumber);
+                var isSuccess = calcMoney();
+                if (isSuccess) {
+                    run(step, pickNumber);
+                }
             }
 
             function pickRandomNumber() {  //選擇亂數號碼0~23
@@ -259,15 +263,20 @@
             function calcMoney() {
                 var $principal = $('#principal');
                 var principal = $principal.val();
-                var $sum = $('#sum');
-                var sum = $sum.val();
                 var bet = 0;
 
                 for (var i = 0; i < priceTableCapacity; i++) {
                     var quantity = $(".inputGroup").eq(i).html();
                     bet += quantity * 2;
                 }
-                $principal.val(principal - bet);
+                if (principal - bet < 0) {
+                    alert("金額不足");
+                    return false;
+                }
+                else {
+                    $principal.val(principal - bet);
+                    return true;
+                }
             }
 
             function getMoney(pickNumber) {
@@ -293,6 +302,15 @@
                 for (var i = 0; i < $inputGroup.length; i++) {
                     $inputGroup[i].innerHTML = "0";
                 }
+            }
+
+            $('#change').on('click',changeMoney);
+
+            function changeMoney(){
+                var principal = parseInt($('#principal').val());
+                $('#principal').val(principal+sum);
+                sum = 0;
+                $('#sum').val(sum);
             }
 
             init();
